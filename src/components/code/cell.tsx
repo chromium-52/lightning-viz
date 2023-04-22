@@ -24,6 +24,11 @@ const CodeEditor = styled(Editor)`
   font-size: 12px;
 `;
 
+const CellHeaderContainer = styled.div`
+  border: 1px solid black;
+  border-radius: 10px;
+`;
+
 const CellHeader: React.FC<CellHeaderProps> = ({
   language,
   toggleShowCode,
@@ -44,7 +49,7 @@ const Cell: React.FC<CellProps> = ({ language }) => {
   const toggleShowCode = () => setShowCode(!showCode);
 
   return (
-    <>
+    <CellHeaderContainer>
       <CellHeader language={language} toggleShowCode={toggleShowCode} />
       {showCode && (
         <CodeEditor
@@ -54,7 +59,7 @@ const Cell: React.FC<CellProps> = ({ language }) => {
           padding={10}
         />
       )}
-    </>
+    </CellHeaderContainer>
   );
 };
 
