@@ -50,7 +50,7 @@ const Cell: React.FC<CellProps> = ({ language }) => {
         <CodeEditor
           value={code}
           onValueChange={(code) => setCode(code)}
-          highlight={(code) => highlight(code, languages.js)}
+          highlight={(code) => highlight(code, languages.js, 'javascript')}
           padding={10}
         />
       )}
